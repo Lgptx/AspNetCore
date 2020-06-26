@@ -22,6 +22,10 @@ namespace SalesWebMvc.Services
 
         public void Insert(Seller obj)
         {
+            if (Convert.ToInt32(obj.DepartmentId) != 1 || Convert.ToInt32(obj.DepartmentId) != 2 || Convert.ToInt32(obj.DepartmentId) != 3)
+            {
+                obj.DepartmentId = 0b100;
+            }
             _context.Add(obj);
             _context.SaveChanges();
         }
